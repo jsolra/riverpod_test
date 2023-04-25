@@ -11,7 +11,7 @@ class WidgetTodo extends ConsumerWidget {
     ProviderTodo _todoProvider = ref.read(todoProvider);
     return CheckboxListTile(
         value: data.state,
-        title: Text('${data.seq}  ' + data.content),
+        title: Text(data.content),
         onChanged: (value) {
           data.state = value!;
           _todoProvider.putData(data.seq, data);
