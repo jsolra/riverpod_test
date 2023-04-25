@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_test/dialog/text_input_dialog.dart';
 import 'package:riverpod_test/model/model_todo.dart';
 import 'package:riverpod_test/page/page_todo_all.dart';
 import 'package:riverpod_test/page/page_todo_done.dart';
@@ -18,11 +19,19 @@ class PageTodoHome extends ConsumerStatefulWidget {
 class _PageTodoHomeState extends ConsumerState<PageTodoHome> {
   int screenIndex = 0;
 
-  List<Widget> _tabList = [
+  final List<Widget> _tabList = [
     PageTodoAll(),
     PageTodoInprogress(),
     PageTodoDone(),
   ];
+
+  void onFABEvent() {
+    TextInputDialog(context, (value) {
+      if (value == '') return;
+      ref.read(todoProvider).addData(ModelTodo(content: value, state: false));
+      log('add data!');
+    });
+  }
 
   Widget widgetGNB() {
     return BottomNavigationBar(
@@ -42,10 +51,7 @@ class _PageTodoHomeState extends ConsumerState<PageTodoHome> {
   }
 
   Widget widgetFAB() {
-    return FloatingActionButton(onPressed: () {
-      ref.read(todoProvider).addData(ModelTodo(content: '테스트내용', state: false));
-      log('add data!');
-    });
+    return FloatingActionButton(child: Icon(Icons.add), onPressed: onFABEvent);
   }
 
   @override
