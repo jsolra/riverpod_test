@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_test/model/model_todo.dart';
 import 'package:riverpod_test/page/page_todo_all.dart';
+import 'package:riverpod_test/page/page_todo_done.dart';
+import 'package:riverpod_test/page/page_todo_inprogress.dart';
 import 'package:riverpod_test/provider/provider_todo.dart';
 
 class PageTodoHome extends ConsumerStatefulWidget {
@@ -18,8 +20,8 @@ class _PageTodoHomeState extends ConsumerState<PageTodoHome> {
 
   List<Widget> _tabList = [
     PageTodoAll(),
-    PageTodoAll(),
-    PageTodoAll(),
+    PageTodoInprogress(),
+    PageTodoDone(),
   ];
 
   Widget widgetGNB() {

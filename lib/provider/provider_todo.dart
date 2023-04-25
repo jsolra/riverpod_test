@@ -9,6 +9,24 @@ class ProviderTodo extends ChangeNotifier {
   }
   final List<ModelTodo> todoList = [];
 
+  List<ModelTodo> get todoInprogressList {
+    return _getStateList(false);
+  }
+
+  List<ModelTodo> get todoDoneList {
+    return _getStateList(true);
+  }
+
+  List<ModelTodo> _getStateList(bool state) {
+    List<ModelTodo> list = [];
+    for (ModelTodo data in todoList) {
+      if (data.state == state) {
+        list.add(data);
+      }
+    }
+    return list;
+  }
+
   void _saveDataInStorage() {
     CustomSharedPreferences().setTodoList(todoList);
   }
