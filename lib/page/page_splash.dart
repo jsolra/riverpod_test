@@ -19,8 +19,9 @@ class _PageSplashState extends State<PageSplash> {
 
   void init() async {
     await CustomSharedPreferences().getInstance();
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => PageTodoHome()));
+    Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (context) => PageTodoHome()),
+        (route) => false);
   }
 
   @override
