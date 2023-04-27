@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:riverpod_test/model/model_todo.dart';
+import 'package:riverpod_test/model/todo/model_todo.dart';
 import 'package:riverpod_test/util/preference/shared_preference_key.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

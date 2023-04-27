@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_test/model/model_todo.dart';
+import 'package:riverpod_test/model/todo/model_todo.dart';
 import 'package:riverpod_test/util/preference/custom_shared_preference.dart';
 
 class ProviderTodo extends ChangeNotifier {

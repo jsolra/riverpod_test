@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_test/model/model_todo.dart';
-import 'package:riverpod_test/provider/provider_todo.dart';
+import 'package:riverpod_test/model/todo/model_todo.dart';
+import 'package:riverpod_test/provider/todo/provider_todo.dart';
 
 class WidgetTodo extends ConsumerWidget {
   const WidgetTodo({super.key, required this.data});

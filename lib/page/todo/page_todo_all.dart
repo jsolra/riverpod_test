@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_test/model/model_todo.dart';
-import 'package:riverpod_test/provider/provider_todo.dart';
+import 'package:riverpod_test/model/todo/model_todo.dart';
+import 'package:riverpod_test/provider/todo/provider_todo.dart';
 import 'package:riverpod_test/widget/todo/widget_todo.dart';
 
-class PageTodoInprogress extends ConsumerWidget {
-  const PageTodoInprogress({super.key});
+class PageTodoAll extends ConsumerWidget {
+  const PageTodoAll({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    List<ModelTodo> todoList = ref.watch(todoProvider).todoInprogressList;
+    List<ModelTodo> todoList = ref.watch(todoProvider).todoList;
     return ListView.separated(
       itemCount: todoList.length,
       separatorBuilder: (BuildContext context, int index) {
