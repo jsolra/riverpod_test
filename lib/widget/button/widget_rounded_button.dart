@@ -11,7 +11,10 @@ class WidgetRoundedButton extends StatelessWidget {
         onTap: ontap,
         child: Container(
           decoration: BoxDecoration(
-              color: Colors.white, border: Border.all(color: Colors.blue)),
+            color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            border: Border.all(color: Colors.blue),
+          ),
           padding: const EdgeInsets.all(10),
           child: Text(
             title,

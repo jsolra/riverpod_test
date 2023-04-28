@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riverpod_test/page/block/page_block_home.dart';
 import 'package:riverpod_test/page/todo/page_todo_home.dart';
 import 'package:riverpod_test/widget/button/widget_rounded_button.dart';
 
@@ -19,6 +20,13 @@ class PageHome extends StatelessWidget {
                   ontap: () {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => PageTodoHome()));
+                  }),
+              const SizedBox(height: 10),
+              WidgetRoundedButton(
+                  title: 'BLOCK',
+                  ontap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => PageBlockHome()));
                   })
             ],
           ),
