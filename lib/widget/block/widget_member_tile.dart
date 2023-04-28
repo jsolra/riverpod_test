@@ -12,7 +12,10 @@ class WidgetMemberTile extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => PageBlockMemberDetail(data: data)));
+      },
       child: Container(
         color: (data.isBlock ?? false) ? Colors.black12 : Colors.transparent,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
